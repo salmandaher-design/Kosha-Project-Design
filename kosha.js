@@ -211,6 +211,11 @@ function switchScreen(id, { remember = true } = {}) {
   if (id === 'home') animateHomeRing();
   if (id === 'live') startLiveTimer(); else stopLiveTimer();
   if (id === 'partner') animatePartnerRing();
+  /* the journey caches scene offsets — they're only trustworthy once the
+     screen is actually on stage, so remeasure on arrival */
+  if (id === 'journey' && window.KoshaJourney) {
+    requestAnimationFrame(() => window.KoshaJourney.refresh());
+  }
 
   buzz(4);
 }
@@ -2133,6 +2138,11 @@ function boot() {
   initProfileRole();
   initInbox();
   initSanctuary();
+  const jnRoot = $('#journeyRoot');
+  if (jnRoot && window.KoshaJourney) {
+    window.KoshaJourney.mount(jnRoot);
+    $('#jnRestart')?.addEventListener('click', () => jnRoot.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
   scr('splash').classList.add('active');
   state.current = 'splash';
   $('#statusbar').classList.add('on-dark');

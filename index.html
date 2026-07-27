@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="kosha.css?v=4">
+  <link rel="stylesheet" href="journey.css?v=1">
 </head>
 <body>
 
@@ -79,6 +80,7 @@
         <button class="rail-btn" data-goto="auth"><i data-lucide="fingerprint"></i>Welcome &amp; Sign in</button>
         <button class="rail-btn" data-goto="otp"><i data-lucide="shield-check"></i>Verification</button>
         <button class="rail-btn" data-goto="home"><i data-lucide="home"></i>Home Dashboard</button>
+        <button class="rail-btn" data-goto="journey"><i data-lucide="route"></i>The Scroll Journey<span class="ar">رحلة</span></button>
       </div>
     </div>
 
@@ -674,6 +676,13 @@
                   </div>
                   <p class="rm-stats" id="rmStats"></p>
                 </div>
+                <button class="jn-enter" data-goto="journey">
+                  <span class="je-tx">
+                    <b>Travel the journey</b>
+                    <span>Fourteen destinations, one continuous ribbon</span>
+                  </span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
                 <div class="roadmap-canvas" id="roadmapCanvasContainer">
                   <!-- serpentine ribbon with interactive milestone nodes, generated in JS -->
                 </div>
@@ -1034,6 +1043,12 @@
           </div>
         </section>
 
+        <!-- ═══ THE SCROLL JOURNEY — one continuous descent ═══ -->
+        <section class="scr" id="scr-journey" data-statusbar="dark">
+          <div class="jn-scroll" id="journeyRoot"></div>
+          <button class="jn-exit iconbtn" data-back aria-label="Leave the journey"><i data-lucide="x"></i></button>
+        </section>
+
         <!-- ═══ NAV DOCK — raised-hump ribbon dock ═══ -->
         <nav class="dock" id="dock" aria-label="Main navigation">
           <svg class="dock-canvas" id="dockCanvas" aria-hidden="true" preserveAspectRatio="none"><path id="dockPath"/></svg>
@@ -1161,6 +1176,7 @@
   </div>
 
   <script src="logo3d.js?v=4"></script>
-  <script src="kosha.js?v=6"></script>
+  <script src="journey.js?v=1"></script>
+  <script src="kosha.js?v=7"></script>
 </body>
 </html>
