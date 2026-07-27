@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KOSHA — Luxury Wedding Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="kosha.css?v=4">
+</head>
+<body>
+
+  <!-- ═══ SHARED SVG DEFS ═══ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- the brand ribbon, sampled from the logo stroke -->
+      <linearGradient id="logoRibbon" x1="0%" y1="20%" x2="100%" y2="80%">
+        <stop offset="0%"  stop-color="#B03A62"/>
+        <stop offset="50%" stop-color="#7C4E86"/>
+        <stop offset="100%" stop-color="#4A6FA5"/>
+      </linearGradient>
+      <linearGradient id="stageRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"  stop-color="#99274A"/>
+        <stop offset="55%" stop-color="#653563"/>
+        <stop offset="100%" stop-color="#2C4A78"/>
+      </linearGradient>
+      <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"  stop-color="#C9AD7C"/>
+        <stop offset="55%" stop-color="#B06181"/>
+        <stop offset="100%" stop-color="#7C8FC4"/>
+      </linearGradient>
+
+
+      <!-- crisp filled monogram (from logo.svg) -->
+      <symbol id="k-logo" viewBox="0 0 1024 1024">
+        <path d="M 296 226 L 268 262 L 351 224 L 702 224 L 736 238 L 764 288 L 764 629 L 732 677 L 679 679 L 509 522 L 509 486 L 568 471 L 611 416 L 616 345 L 585 298 L 535 286 L 495 312 L 487 453 L 339 311 L 275 301 L 232 330 L 213 376 L 213 720 L 231 764 L 293 800 L 676 800 L 726 780 L 740 764 L 698 777 L 292 777 L 262 764 L 235 714 L 235 379 L 265 329 L 319 324 L 488 481 L 488 517 L 422 541 L 382 607 L 382 665 L 413 707 L 462 719 L 505 693 L 511 547 L 657 692 L 724 704 L 767 677 L 786 632 L 786 288 L 766 238 L 703 203 L 355 203 Z" fill-rule="evenodd"/>
+        <path d="M 486 540 L 489 544 L 489 616 L 490 617 L 490 658 L 491 659 L 490 673 L 486 682 L 478 690 L 472 694 L 463 697 L 458 697 L 457 698 L 450 698 L 449 697 L 439 696 L 428 691 L 420 685 L 412 676 L 406 666 L 406 664 L 402 655 L 401 647 L 400 646 L 400 626 L 401 625 L 401 620 L 402 619 L 403 612 L 406 603 L 408 600 L 408 598 L 416 582 L 427 567 L 438 556 L 446 550 L 455 545 L 464 542 L 467 542 L 468 541 L 472 541 L 473 540 Z" fill-rule="evenodd"/>
+        <path d="M 559 308 L 570 313 L 574 316 L 586 329 L 593 342 L 595 352 L 596 353 L 597 366 L 598 367 L 597 386 L 596 387 L 596 391 L 595 392 L 594 399 L 591 408 L 589 411 L 589 413 L 582 426 L 572 439 L 560 450 L 551 456 L 540 461 L 537 461 L 532 463 L 526 463 L 525 464 L 514 464 L 513 463 L 510 463 L 508 459 L 508 335 L 509 334 L 509 331 L 514 321 L 521 314 L 530 309 L 536 307 L 544 307 L 545 306 Z" fill-rule="evenodd"/>
+      </symbol>
+
+      <!-- the continuous-stroke centerline, for line-draw animation -->
+      <symbol id="k-line" viewBox="0 0 1024 1024">
+        <path class="k-line-path" d="M 276 250 C 320 224 360 212 420 212 L 660 212 C 730 212 776 250 776 322 L 776 600 C 776 650 762 678 726 692 C 690 680 560 560 512 514 C 502 504 498 492 498 478 C 520 478 570 462 594 434 C 618 406 622 360 610 330 C 596 300 560 282 528 292 C 500 302 492 330 492 366 L 492 470 C 492 502 476 520 450 536 C 414 558 388 592 384 634 C 380 674 398 706 434 716 C 470 726 500 704 504 664 C 508 620 506 560 500 514 C 494 480 470 452 440 424 L 330 320 C 300 292 260 300 240 330 C 228 350 224 368 224 400 L 224 660 C 224 730 260 788 340 788 L 660 788 C 700 788 726 780 742 764"/>
+      </symbol>
+
+      <!-- section flourish — one line that loops once, like the monogram -->
+      <symbol id="k-flourish" viewBox="0 0 74 12">
+        <path d="M 1 8 L 26 8 C 32 8 34 2.5 30.5 2.5 C 27 2.5 28.5 8 35 8 L 73 8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ═══ STAGE ═══ -->
+  <div class="stage-aura" aria-hidden="true"></div>
+  <div class="stage-grain" aria-hidden="true"></div>
+  <svg class="stage-motif" viewBox="0 0 1024 1024" aria-hidden="true">
+    <path d="M 276 250 C 320 224 360 212 420 212 L 660 212 C 730 212 776 250 776 322 L 776 600 C 776 650 762 678 726 692 C 690 680 560 560 512 514 C 502 504 498 492 498 478 C 520 478 570 462 594 434 C 618 406 622 360 610 330 C 596 300 560 282 528 292 C 500 302 492 330 492 366 L 492 470 C 492 502 476 520 450 536 C 414 558 388 592 384 634 C 380 674 398 706 434 716 C 470 726 500 704 504 664 C 508 620 506 560 500 514 C 494 480 470 452 440 424 L 330 320 C 300 292 260 300 240 330 C 228 350 224 368 224 400 L 224 660 C 224 730 260 788 340 788 L 660 788 C 700 788 726 780 742 764"/>
+  </svg>
+
+  <!-- ═══ CONTROL RAIL ═══ -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <svg aria-hidden="true"><use href="#k-logo" fill="url(#logoRibbon)"/></svg>
+      <div>
+        <h1>KOSHA</h1>
+        <small>Design Language · V2</small>
+      </div>
+    </div>
+    <p class="rail-lede">A luxury wedding ecosystem, redesigned around the continuous line of the monogram. Walk the journey or jump to any moment.</p>
+    <svg class="rail-flourish" width="74" height="12" aria-hidden="true"><use href="#k-flourish" fill="none" stroke="#C9AD7C" stroke-width="1.4" stroke-linecap="round"/></svg>
+
+    <div class="rail-group">
+      <h3>The Journey</h3>
+      <div class="rail-nav">
+        <button class="rail-btn" data-goto="splash"><i data-lucide="sparkles"></i>Splash Reveal</button>
+        <button class="rail-btn" data-goto="onboard"><i data-lucide="book-open"></i>Onboarding</button>
+        <button class="rail-btn" data-goto="auth"><i data-lucide="fingerprint"></i>Welcome &amp; Sign in</button>
+        <button class="rail-btn" data-goto="otp"><i data-lucide="shield-check"></i>Verification</button>
+        <button class="rail-btn" data-goto="home"><i data-lucide="home"></i>Home Dashboard</button>
+      </div>
+    </div>
+
+    <div class="rail-group">
+      <h3>The Four Pillars</h3>
+      <div class="rail-nav">
+        <button class="rail-btn" data-goto="khotbah"><i data-lucide="gem"></i>Khotbah — Matchmaking<span class="ar">خطبة</span></button>
+        <button class="rail-btn" data-goto="zahbah"><i data-lucide="shopping-bag"></i>Zahbah — Boutique<span class="ar">زهبة</span></button>
+        <button class="rail-btn" data-goto="zaffah"><i data-lucide="landmark"></i>Zaffah — Venues<span class="ar">زفة</span></button>
+        <button class="rail-btn" data-goto="tawjeeh"><i data-lucide="heart-handshake"></i>Tawjeeh — Guidance<span class="ar">توجيه</span></button>
+      </div>
+    </div>
+
+    <div class="rail-group">
+      <h3>Flows &amp; Moments</h3>
+      <div class="rail-nav">
+        <button class="rail-btn" data-goto="cart"><i data-lucide="shopping-cart"></i>Cart &amp; Checkout</button>
+        <button class="rail-btn" data-goto="inbox"><i data-lucide="message-circle"></i>Conversations Hub</button>
+        <button class="rail-btn" data-goto="live"><i data-lucide="video"></i>Live Consultation</button>
+        <button class="rail-btn" data-goto="profile"><i data-lucide="user"></i>Profile &amp; Settings</button>
+      </div>
+    </div>
+
+    <div class="rail-group">
+      <h3>Environment</h3>
+      <div class="rail-toggles">
+        <button class="rail-toggle" id="railTheme"><i data-lucide="moon"></i><span>Dark mode</span></button>
+        <button class="rail-toggle" id="railReset"><i data-lucide="rotate-ccw"></i><span>Restart</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══ DEVICE ═══ -->
+  <div class="device">
+    <div class="device-screen">
+      <div class="notch" aria-hidden="true"></div>
+
+      <div class="app" id="app" data-theme="light">
+
+        <!-- top flow ribbon bar & sparkle overlay -->
+        <div class="flow-ribbon-bar" id="flowRibbonBar" aria-hidden="true">
+          <svg viewBox="0 0 396 32" preserveAspectRatio="none">
+            <path d="M 0 16 Q 99 0 198 16 T 396 16 L 396 0 L 0 0 Z" fill="url(#logoRibbon)" opacity="0.35"/>
+            <path d="M 0 12 Q 99 24 198 12 T 396 12" fill="none" stroke="#C9AD7C" stroke-width="1.2" opacity="0.6"/>
+          </svg>
+        </div>
+        <canvas id="sparkleCanvas" class="sparkle-canvas" aria-hidden="true"></canvas>
+
+        <!-- status bar -->
+        <div class="statusbar" id="statusbar" aria-hidden="true">
+          <span id="sbTime">9:41</span>
+          <span class="sb-icons">
+            <i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i>
+          </span>
+        </div>
+
+        <!-- ═══ 1 · SPLASH ═══ -->
+        <section class="scr scr-splash" id="scr-splash" data-statusbar="dark">
+          <div class="particles" id="splashParticles" aria-hidden="true"></div>
+          <div class="splash-stack">
+            <div class="splash-logo">
+              <svg class="draw" viewBox="0 0 1024 1024" aria-label="KOSHA monogram">
+                <path d="M 276 250 C 320 224 360 212 420 212 L 660 212 C 730 212 776 250 776 322 L 776 600 C 776 650 762 678 726 692 C 690 680 560 560 512 514 C 502 504 498 492 498 478 C 520 478 570 462 594 434 C 618 406 622 360 610 330 C 596 300 560 282 528 292 C 500 302 492 330 492 366 L 492 470 C 492 502 476 520 450 536 C 414 558 388 592 384 634 C 380 674 398 706 434 716 C 470 726 500 704 504 664 C 508 620 506 560 500 514 C 494 480 470 452 440 424 L 330 320 C 300 292 260 300 240 330 C 228 350 224 368 224 400 L 224 660 C 224 730 260 788 340 788 L 660 788 C 700 788 726 780 742 764" stroke-width="22"/>
+              </svg>
+              <div id="splash3dSlot"></div>
+            </div>
+            <div class="splash-word">Kosha</div>
+            <div class="splash-tag">The Wedding Ecosystem</div>
+          </div>
+          <div class="splash-hint">Touch to begin</div>
+        </section>
+
+        <!-- ═══ 2 · ONBOARDING ═══ -->
+        <section class="scr scr-onboard" id="scr-onboard">
+          <button class="ob-skip" id="obSkip">Skip</button>
+          <div class="ob-canvas">
+            <div class="ob-halo" aria-hidden="true"></div>
+            <div class="ob-slides" id="obSlides">
+
+              <div class="ob-slide on">
+                <div class="ob-art" aria-hidden="true">
+                  <svg viewBox="0 0 208 208">
+                    <path class="stroke" d="M 62 118 a 40 40 0 1 1 40 40 a 40 40 0 1 1 4 -80 a 40 40 0 1 1 40 40"/>
+                    <path class="fine" d="M 104 34 l 4 9 l 9 4 l -9 4 l -4 9 l -4 -9 l -9 -4 l 9 -4 Z"/>
+                    <path class="fine" d="M 174 84 l 2.6 5.8 l 5.8 2.6 l -5.8 2.6 l -2.6 5.8 l -2.6 -5.8 l -5.8 -2.6 l 5.8 -2.6 Z"/>
+                    <path class="fine" d="M 34 66 l 2 4.6 l 4.6 2 l -4.6 2 l -2 4.6 l -2 -4.6 l -4.6 -2 l 4.6 -2 Z"/>
+                  </svg>
+                </div>
+                <div class="ar-name">خطبة</div>
+                <h3>A match, written<br><em>with intention</em></h3>
+                <p>Discover compatible life partners inside a private, verified circle — every identity confirmed through UAE&nbsp;Pass.</p>
+              </div>
+
+              <div class="ob-slide">
+                <div class="ob-art" aria-hidden="true">
+                  <svg viewBox="0 0 208 208">
+                    <path class="stroke" d="M 40 172 L 40 96 C 40 52 68 30 104 30 C 140 30 168 52 168 96 L 168 172"/>
+                    <path class="fine" d="M 26 172 L 182 172"/>
+                    <path class="fine" d="M 104 58 L 104 74 M 96 82 a 8 8 0 1 0 16 0 a 8 8 0 1 0 -16 0"/>
+                    <path class="fine" d="M 62 172 C 62 138 76 120 104 120 C 132 120 146 138 146 172"/>
+                  </svg>
+                </div>
+                <div class="ar-name">زفة · زهبة</div>
+                <h3>Every detail,<br><em>beautifully arranged</em></h3>
+                <p>Reserve storied venues, planners and photographers — and shop couture, jewellery and invitations from luxury curators.</p>
+              </div>
+
+              <div class="ob-slide">
+                <div class="ob-art" aria-hidden="true">
+                  <svg viewBox="0 0 208 208">
+                    <path class="stroke" d="M 44 64 C 44 50 54 42 68 42 L 118 42 C 132 42 142 50 142 64 L 142 92 C 142 106 132 114 118 114 L 84 114 L 62 132 L 62 114 C 50 114 44 104 44 92 Z"/>
+                    <path class="stroke" d="M 106 128 C 106 144 118 152 132 152 L 142 152 L 160 168 L 160 152 C 172 152 164 152 164 152 C 172 150 176 142 176 134 L 176 128"/>
+                    <path class="fine" d="M 93 66 a 7 7 0 0 1 14 0 c 0 7 -14 8 -14 16 M 100 92 l 0 1"/>
+                  </svg>
+                </div>
+                <div class="ar-name">توجيه</div>
+                <h3>Guidance for<br><em>a lasting union</em></h3>
+                <p>Meet certified marital, psychological and legal counselors in secure live sessions — before and after the big day.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="ob-footer">
+            <div class="ob-dots" id="obDots">
+              <span class="dot on"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <button class="btn" id="obNext"><span class="btn-label">Continue</span></button>
+          </div>
+        </section>
+
+        <!-- ═══ 3 · AUTH ═══ -->
+        <section class="scr scr-auth" id="scr-auth">
+          <div class="scroll">
+            <div class="auth-hero rise">
+              <div class="eyebrow">Welcome to Kosha</div>
+              <div class="salaam">Ahlan,<br><em>let's begin.</em></div>
+              <p>Sign in securely to start writing your story — from the first hello to the happily ever after.</p>
+            </div>
+
+            <div class="rise" style="margin-top:26px">
+              <div class="field" id="emailField">
+                <input type="email" id="authEmail" placeholder=" " autocomplete="email">
+                <label for="authEmail">Email address</label>
+                <div class="err-msg">Please enter a valid email address.</div>
+              </div>
+              <button class="btn" id="authContinue" style="margin-top:14px">
+                <span class="btn-label">Continue with Email</span>
+                <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+              </button>
+            </div>
+
+            <div class="divider rise">or connect with</div>
+
+            <div class="rise">
+              <button class="uae-pass" id="uaePassBtn">
+                <span class="uae-mark">UAE</span> Continue with UAE&nbsp;PASS
+              </button>
+              <p class="auth-legal">By continuing you agree to KOSHA's <b>Terms of Service</b><br>and acknowledge our <b>Privacy Charter</b>.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 4 · OTP ═══ -->
+        <section class="scr push" id="scr-otp">
+          <div class="pushbar">
+            <button class="iconbtn ghost" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div><div class="ptitle">Verification</div></div>
+            <span></span>
+          </div>
+          <div class="scroll">
+            <div class="auth-hero rise" style="text-align:center; padding-top:12px">
+              <div class="salaam" style="font-size:2rem">Check your inbox</div>
+              <p style="margin:12px auto 0; max-width:270px">We sent a four-digit code to<br><b id="otpEmailEcho" style="color:var(--text-1)">you@example.com</b></p>
+            </div>
+            <div class="otp-row rise">
+              <input class="otp-cell" maxlength="1" inputmode="numeric" aria-label="Digit 1">
+              <input class="otp-cell" maxlength="1" inputmode="numeric" aria-label="Digit 2">
+              <input class="otp-cell" maxlength="1" inputmode="numeric" aria-label="Digit 3">
+              <input class="otp-cell" maxlength="1" inputmode="numeric" aria-label="Digit 4">
+            </div>
+            <div class="otp-meta rise">Didn't receive it? <b id="otpResend">Resend code</b></div>
+            <div class="rise" style="margin-top:30px">
+              <button class="btn" id="otpVerify" disabled>
+                <span class="btn-label">Verify &amp; Continue</span>
+                <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 4B · THE TAAROF — a conversation, not paperwork ═══ -->
+        <section class="scr" id="scr-survey">
+          <div class="svy-top">
+            <button class="iconbtn ghost" id="svyBack" aria-label="Previous question"><i data-lucide="arrow-left"></i></button>
+            <div class="svy-progress" aria-hidden="true"><div class="svy-bar" id="svyBar"></div></div>
+            <button class="svy-skip" id="svySkip">Skip</button>
+          </div>
+          <div class="svy-body" id="svyBody"><!-- one question per screen, rendered in JS --></div>
+        </section>
+
+        <!-- ═══ 5 · HOME ═══ -->
+        <section class="scr" id="scr-home">
+          <div class="appbar">
+            <button class="iconbtn" data-goto="profile" aria-label="Profile"><i data-lucide="user"></i></button>
+            <div class="wordmark">Kosha</div>
+            <div style="display:flex;gap:6px">
+              <button class="iconbtn" id="openSearchStudio" aria-label="Search Studio"><i data-lucide="search"></i></button>
+              <button class="iconbtn" data-goto="inbox" aria-label="Messages"><i data-lucide="message-circle"></i><span class="bubble show">2</span></button>
+            </div>
+          </div>
+          <div class="scroll">
+            <div class="sechead rise" style="margin-top:8px">
+              <div class="eyebrow" id="homeGreeting">Good evening</div>
+              <h2 id="homeName">Ahmad &amp; Sara</h2>
+              <svg class="flourish" aria-hidden="true"><use href="#k-flourish"/></svg>
+            </div>
+
+            <!-- Search Studio floating quick launcher -->
+            <button class="studio-launcher rise" id="openSearchStudioBar">
+              <i data-lucide="sparkles" class="sl-ic"></i>
+              <span class="sl-text">Open Search Studio &amp; Budget Radar…</span>
+              <span class="sl-badge">V2 Studio</span>
+            </button>
+
+            <!-- hero for the "searching" journey stage -->
+            <div class="invite lavender rise" id="searchHero" data-goto="khotbah" role="button" tabindex="0" style="display:none" aria-label="Begin matchmaking">
+              <div class="inv-eyebrow">The First Page</div>
+              <div class="inv-days" style="font-size:2.1rem;line-height:1.2">Your story awaits<br><em>its co-author</em></div>
+              <div class="inv-date"><i data-lucide="gem"></i><span>Verified, private matchmaking · Khotbah</span></div>
+            </div>
+
+            <!-- countdown invitation -->
+            <div class="invite rise" data-goto="zaffah" role="button" tabindex="0" aria-label="Wedding countdown">
+              <div class="inv-eyebrow">The Grand Event</div>
+              <div class="inv-days"><span id="invDays">284</span> <em>days</em></div>
+              <div class="inv-date"><i data-lucide="calendar-heart"></i><span id="invDate">Saturday, 1 May 2027 · Dubai</span></div>
+              <svg class="inv-ring" viewBox="0 0 74 74" aria-hidden="true">
+                <circle class="track" cx="37" cy="37" r="34"/>
+                <circle class="val" id="invRing" cx="37" cy="37" r="34"/>
+                <text x="37" y="36">72%</text>
+                <text class="lbl" x="37" y="46">PLANNED</text>
+              </svg>
+            </div>
+
+            <!-- pillars -->
+            <div class="sechead rise"><div class="row"><h2>Begin a chapter</h2></div></div>
+            <div class="pillars rise">
+              <button class="pillar k1" data-goto="khotbah">
+                <span class="p-ar">خطبة</span>
+                <span class="p-ic"><i data-lucide="gem"></i></span>
+                <h4>Khotbah</h4><p>Verified matchmaking</p>
+              </button>
+              <button class="pillar k2" data-goto="zahbah">
+                <span class="p-ar">زهبة</span>
+                <span class="p-ic"><i data-lucide="shopping-bag"></i></span>
+                <h4>Zahbah</h4><p>Couture &amp; boutique</p>
+              </button>
+              <button class="pillar k3" data-goto="zaffah">
+                <span class="p-ar">زفة</span>
+                <span class="p-ic"><i data-lucide="landmark"></i></span>
+                <h4>Zaffah</h4><p>Venues &amp; services</p>
+              </button>
+              <button class="pillar k4" data-goto="tawjeeh">
+                <span class="p-ar">توجيه</span>
+                <span class="p-ic"><i data-lucide="heart-handshake"></i></span>
+                <h4>Tawjeeh</h4><p>Family guidance</p>
+              </button>
+            </div>
+
+            <!-- venues -->
+            <div class="sechead rise">
+              <div class="row">
+                <div><div class="eyebrow">Zaffah · Handpicked</div><h2>Featured venues</h2></div>
+                <button class="seeall" data-goto="zaffah" data-zaffa-view="vendors">View all <i data-lucide="arrow-right"></i></button>
+              </div>
+            </div>
+            <div class="hscroll rise" id="homeVenues"></div>
+
+            <!-- specialists -->
+            <div class="sechead rise">
+              <div class="row">
+                <div><div class="eyebrow">Tawjeeh · Trusted</div><h2>Top specialists</h2></div>
+                <button class="seeall" data-goto="tawjeeh">View all <i data-lucide="arrow-right"></i></button>
+              </div>
+            </div>
+            <div class="rise" id="homeSpecs" style="display:flex;flex-direction:column;gap:11px"></div>
+
+            <!-- banner -->
+            <div class="sechead rise"><div class="row"><div><div class="eyebrow">Curated</div><h2>After the aisle</h2></div></div></div>
+            <div class="banner rise" id="homeBanner">
+              <div class="ph" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=900&auto=format&fit=crop')"></div>
+              <div class="bn-body">
+                <div class="eyebrow">Honeymoon Collection</div>
+                <h3>Maldives, curated for two</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 5B · SEARCH STUDIO OVERLAY (05_SearchExperience.md) ═══ -->
+        <section class="scr push" id="scr-search-studio">
+          <div class="pushbar">
+            <button class="iconbtn" data-back aria-label="Close Studio"><i data-lucide="x"></i></button>
+            <div><div class="ptitle">Search Studio</div><div class="psub">Ecosystem Radar</div></div>
+            <span></span>
+          </div>
+          <div class="scroll">
+            <!-- Studio Input -->
+            <div class="searchbar rise" style="margin-top:4px">
+              <i data-lucide="sparkles" style="color:var(--champagne)"></i>
+              <input type="text" id="studioQuery" placeholder="Search across all 4 pillars, venues &amp; gowns…" aria-label="Search studio">
+              <button class="iconbtn ghost" id="studioClear" style="width:30px;height:30px"><i data-lucide="x"></i></button>
+            </div>
+
+            <!-- Pillar Filter Radar Buttons -->
+            <div class="sechead rise"><div class="eyebrow">Select Pillar Radar</div></div>
+            <div class="chiprow rise" id="studioPillarChips">
+              <button class="chip on" data-pillar="all">✦ All Ecosystem</button>
+              <button class="chip" data-pillar="khotbah">Khitbah · Match</button>
+              <button class="chip" data-pillar="zahbah">Zahba · Boutique</button>
+              <button class="chip" data-pillar="zaffah">Zaffa · Venues</button>
+              <button class="chip" data-pillar="tawjeeh">Tawjeeh · Counsel</button>
+            </div>
+
+            <!-- Budget Arc Slider -->
+            <div class="card studio-budget-card rise" style="padding:16px;margin-top:14px">
+              <div class="sb-head">
+                <div class="eyebrow">Budget Arc Filter</div>
+                <div class="sb-val"><span id="studioBudgetVal">25,000</span> <small>AED MAX</small></div>
+              </div>
+              <!-- Realtime Histogram Bars -->
+              <div class="budget-histogram" id="studioHistogram">
+                <!-- JS generated histogram bars -->
+              </div>
+              <input type="range" id="studioBudgetRange" min="1000" max="50000" step="1000" value="25000" aria-label="Max budget filter">
+            </div>
+
+            <!-- Recent searches -->
+            <div>
+              <div class="sechead rise" style="margin-bottom:8px"><div class="eyebrow">Your recent threads</div></div>
+              <div class="chiprow rise" id="studioRecent"></div>
+            </div>
+
+            <!-- Quick curations -->
+            <div class="sechead rise"><div class="eyebrow">Quick Curations</div></div>
+            <div class="tagcloud rise" id="studioQuickTags">
+              <button class="tag click" data-tag="Dubai"><i data-lucide="landmark"></i>&nbsp;Dubai venues</button>
+              <button class="tag click" data-tag="Gown"><i data-lucide="shirt"></i>&nbsp;Silk gowns</button>
+              <button class="tag click" data-tag="Legal"><i data-lucide="scale"></i>&nbsp;Legal counsel</button>
+              <button class="tag click" data-tag="Invitation"><i data-lucide="mail"></i>&nbsp;Invitations</button>
+              <button class="tag click" data-tag="Ring"><i data-lucide="gem"></i>&nbsp;Rings</button>
+            </div>
+
+            <!-- Results -->
+            <div class="sechead rise"><div class="eyebrow">Matching Discoveries</div></div>
+            <div id="studioResults" class="rise" style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+              <!-- JS populated -->
+            </div>
+            <div style="height:96px"></div>
+          </div>
+          <div class="actionbar">
+            <button class="btn champagne" id="studioExplore"><span class="btn-label">Explore matches</span></button>
+          </div>
+        </section>
+
+        <!-- ═══ 6 · KHOTBAH ═══ -->
+        <section class="scr" id="scr-khotbah">
+          <div class="appbar">
+            <button class="iconbtn" data-goto="profile" aria-label="Profile"><i data-lucide="user"></i></button>
+            <div class="wordmark" lang="ar">خطبة</div>
+            <button class="iconbtn" data-goto="inbox" aria-label="Messages"><i data-lucide="message-circle"></i></button>
+          </div>
+
+          <!-- locked gateway -->
+          <div class="scroll" id="khotbahLocked">
+            <div class="gateway rise">
+              <div class="gw-emblem"><span class="ring"></span><span class="core"><i data-lucide="gem"></i></span></div>
+              <h3>A private circle,<br><em>curated with care</em></h3>
+              <p>KOSHA matchmaking is a quiet, guarded space. Every profile is identity-verified. Every conversation is protected.</p>
+            </div>
+            <div class="gw-points rise">
+              <div class="gw-point"><span class="ic"><i data-lucide="shield-check"></i></span><span class="tx"><b>UAE Pass verified identities</b><span>No anonymity for bad actors — ever.</span></span></div>
+              <div class="gw-point"><span class="ic"><i data-lucide="eye-off"></i></span><span class="tx"><b>Anonymized until you choose</b><span>Photos veiled, names private, you decide when.</span></span></div>
+              <div class="gw-point"><span class="ic"><i data-lucide="lock"></i></span><span class="tx"><b>Guarded conversations</b><span>Contact-detail sharing blocked automatically.</span></span></div>
+            </div>
+            <div class="member-card rise">
+              <div class="mc-top">
+                <div class="mc-name">KOSHA PRIVÉE</div>
+                <svg class="mc-logo" aria-hidden="true"><use href="#k-logo" fill="#E9D5AF"/></svg>
+              </div>
+              <div class="mc-desc">Unlimited connection requests, moderated introductions, and a dedicated matchmaking concierge.</div>
+              <div class="mc-price"><span class="amount">149 AED</span><span class="per">/ month</span></div>
+            </div>
+            <button class="btn champagne rise" id="subscribeBtn">
+              <span class="btn-label"><i data-lucide="sparkles"></i>&nbsp;Begin Membership</span>
+              <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+            </button>
+          </div>
+
+          <!-- unlocked directory -->
+          <div class="scroll" id="khotbahDirectory" style="display:none">
+            <div class="sechead rise" style="margin-top:6px">
+              <div class="eyebrow">Khotbah · Members Circle</div>
+              <h2>Written for you</h2>
+              <svg class="flourish" aria-hidden="true"><use href="#k-flourish"/></svg>
+            </div>
+            <div class="chiprow rise" id="matchFilters">
+              <button class="chip on">All matches</button>
+              <button class="chip">Dubai</button>
+              <button class="chip">Abu Dhabi</button>
+              <button class="chip">Sharjah</button>
+              <button class="chip">25–30</button>
+            </div>
+            <div class="match-grid rise" id="matchGrid" style="margin-top:10px"></div>
+          </div>
+        </section>
+
+        <!-- ═══ 7 · PARTNER PROFILE ═══ -->
+        <section class="scr push" id="scr-partner">
+          <div class="pp-hero">
+            <div class="ph" id="ppPhoto"></div>
+            <div class="veil"></div>
+            <div class="pushbar">
+              <button class="iconbtn" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+              <span></span>
+              <button class="iconbtn" aria-label="Report" id="ppReport"><i data-lucide="flag"></i></button>
+            </div>
+            <div class="pp-id">
+              <div class="eyebrow">Anonymized Profile</div>
+              <h2 id="ppName">Candidate 92A</h2>
+              <p id="ppMeta">28 · Dubai · Architect</p>
+            </div>
+          </div>
+          <div class="scroll" style="padding-top:18px">
+            <div class="card compat-card rise">
+              <div class="compat-head">
+                <svg class="compat-ring" viewBox="0 0 92 92">
+                  <circle class="track" cx="46" cy="46" r="42"/>
+                  <circle class="val" id="ppRing" cx="46" cy="46" r="42"/>
+                  <text x="46" y="53" id="ppRingTxt">96%</text>
+                </svg>
+                <div class="compat-copy">
+                  <h4>Remarkable alignment</h4>
+                  <p id="ppCompatCopy">Shared values on family, faith and ambition — a rare resonance.</p>
+                </div>
+              </div>
+              <!-- 5-Pillar Radar Chart -->
+              <div class="radar-box" id="ppRadarBox">
+                <div class="radar-title">5-Pillar Harmony Matrix</div>
+                <svg class="radar-svg" viewBox="0 0 200 180" id="ppRadarChart">
+                  <!-- JS generated radar polygon and axis labels -->
+                </svg>
+              </div>
+            </div>
+            <div id="ppQA"></div>
+            <div class="sechead rise"><div class="eyebrow">In their words</div><h2 style="font-size:1.3rem">Values &amp; passions</h2></div>
+            <div class="tagcloud rise" id="ppTags"></div>
+            <div style="height:76px"></div>
+          </div>
+          <div class="actionbar">
+            <button class="iconbtn" id="ppSkip" aria-label="Skip profile"><i data-lucide="x"></i></button>
+            <button class="btn" id="ppConnect"><span class="btn-label"><i data-lucide="mail-plus"></i>&nbsp;Request Connection</span></button>
+          </div>
+        </section>
+
+        <!-- ═══ 8 · ZAHBAH SHOP ═══ -->
+        <section class="scr" id="scr-zahbah">
+          <div class="appbar">
+            <button class="iconbtn" data-goto="profile" aria-label="Profile"><i data-lucide="user"></i></button>
+            <div class="wordmark" lang="ar">زهبة</div>
+            <button class="iconbtn" data-goto="cart" aria-label="Cart"><i data-lucide="shopping-bag"></i><span class="bubble" id="cartBadge">0</span></button>
+          </div>
+          <div class="scroll">
+            <div class="sechead rise" style="margin-top:6px">
+              <div class="eyebrow">Zahba · Bridal Trousseau</div>
+              <h2>Objects of devotion</h2>
+              <svg class="flourish" aria-hidden="true"><use href="#k-flourish"/></svg>
+            </div>
+
+            <!-- Mode Switcher: Atelier vs Digital Chest -->
+            <div class="seg rise" id="zahbaSeg" style="margin-bottom:14px">
+              <div class="seg-glider"></div>
+              <button class="seg-btn on" data-mode="collection">Atelier Collection</button>
+              <button class="seg-btn" data-mode="chest">My Zahba Chest ✦</button>
+            </div>
+
+            <!-- Collection View -->
+            <div id="zahbaCollectionView">
+              <div class="searchbar rise" style="margin-bottom:14px">
+                <i data-lucide="search"></i>
+                <input type="text" id="shopSearch" placeholder="Search couture, rings, invitations…" aria-label="Search products">
+              </div>
+              <div class="chiprow rise" id="shopChips">
+                <button class="chip on" data-cat="all">All</button>
+                <button class="chip" data-cat="attire">Attire</button>
+                <button class="chip" data-cat="jewellery">Jewellery</button>
+                <button class="chip" data-cat="invitations">Invitations</button>
+                <button class="chip" data-cat="decor">Décor</button>
+              </div>
+              <div class="shop-grid rise" id="shopGrid" style="margin-top:10px"></div>
+              <div class="empty" id="shopEmpty" style="display:none">
+                <svg class="e-logo" aria-hidden="true"><use href="#k-logo" fill="url(#logoRibbon)"/></svg>
+                <h3>Nothing found</h3>
+                <p>Try a different word — or browse the whole collection.</p>
+                <button class="btn slim quiet" id="shopClear" style="max-width:180px">Clear search</button>
+              </div>
+            </div>
+
+            <!-- Digital Chest View -->
+            <div id="zahbaChestView" style="display:none">
+              <div class="chest-container rise">
+                <div class="chest-header">
+                  <div class="ch-badge"><i data-lucide="award"></i> Gold Foil Certified</div>
+                  <h3>The Bridal Trousseau Chest</h3>
+                  <p>Curated heirlooms, custom gowns &amp; jewelry saved for your grand reveal.</p>
+                  <div class="chest-meta">
+                    <div class="cm-stat"><b id="chestCount">0 / 6</b><span>Items Saved</span></div>
+                    <div class="cm-stat"><b id="chestValue">0 AED</b><span>Estimated Value</span></div>
+                  </div>
+                </div>
+                <div class="chest-grid" id="chestGrid">
+                  <!-- dynamically populated -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 9 · PRODUCT DETAIL ═══ -->
+        <section class="scr push" id="scr-product">
+          <div class="pd-hero">
+            <div class="ph" id="pdPhoto"></div>
+            <div class="pushbar">
+              <button class="iconbtn" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+              <span></span>
+              <button class="iconbtn" id="pdWish" aria-label="Save to wishlist"><i data-lucide="heart"></i></button>
+            </div>
+          </div>
+          <div class="scroll" style="padding-top:0">
+            <div class="pd-title-row rise">
+              <div>
+                <div class="pd-brand" id="pdBrand">Atelier Noor</div>
+                <h2 id="pdName">Designer Ivory Gown</h2>
+                <div class="stars" style="margin-top:7px"><i data-lucide="star"></i><span id="pdRating">4.9</span><span style="color:var(--text-3);font-weight:500" id="pdReviews">· 124 reviews</span></div>
+              </div>
+              <div class="pd-price"><span id="pdPrice">4,200</span> <small>AED</small></div>
+            </div>
+            <p class="pd-desc rise" id="pdDesc"></p>
+            <div class="rise">
+              <div class="opt-label" id="pdOptLabel">Select size</div>
+              <div class="varrow" id="pdVariants"></div>
+            </div>
+            <div style="height:90px"></div>
+          </div>
+          <div class="actionbar">
+            <button class="btn" id="pdAdd">
+              <span class="btn-label"><i data-lucide="shopping-bag"></i>&nbsp;Add to Cart</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ═══ 10 · ZAFFAH CATALOG & DREAM ROADMAP ═══ -->
+        <section class="scr" id="scr-zaffah">
+          <div class="appbar">
+            <button class="iconbtn" data-goto="profile" aria-label="Profile"><i data-lucide="user"></i></button>
+            <div class="wordmark" lang="ar">زفة</div>
+            <button class="iconbtn" data-goto="cart" aria-label="Cart"><i data-lucide="shopping-bag"></i><span class="bubble cart-badge">0</span></button>
+          </div>
+          <div class="scroll">
+            <div class="sechead rise" style="margin-top:6px">
+              <div class="eyebrow">Zaffah · Journey &amp; Venues</div>
+              <h2>Set the scene</h2>
+              <svg class="flourish" aria-hidden="true"><use href="#k-flourish"/></svg>
+            </div>
+
+            <!-- Segment Switcher: Venues vs Dream Roadmap -->
+            <div class="seg rise" id="zaffaSeg" style="margin-bottom:14px">
+              <div class="seg-glider"></div>
+              <button class="seg-btn on" data-view="roadmap">Dream Roadmap ✦</button>
+              <button class="seg-btn" data-view="vendors">Venues &amp; Vendors</button>
+            </div>
+
+            <!-- Dream Roadmap Canvas View -->
+            <div id="zaffaRoadmapView">
+              <div class="roadmap-card rise">
+                <div class="rm-head">
+                  <div class="rm-toprow">
+                    <div>
+                      <div class="rm-eyebrow">The Dream Roadmap</div>
+                      <h3>Your story, in fifteen chapters</h3>
+                    </div>
+                    <button class="iconbtn" id="rmViewToggle" aria-label="Switch to list view"><i data-lucide="list"></i></button>
+                  </div>
+                  <p class="rm-stats" id="rmStats"></p>
+                </div>
+                <div class="roadmap-canvas" id="roadmapCanvasContainer">
+                  <!-- serpentine ribbon with interactive milestone nodes, generated in JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Vendors View -->
+            <div id="zaffaVendorsView" style="display:none">
+              <div class="chiprow rise">
+                <button class="chip on">Venues</button>
+                <button class="chip">Planners</button>
+                <button class="chip">Photography</button>
+                <button class="chip">Flowers</button>
+                <button class="chip">Makeup</button>
+              </div>
+              <div class="rise" id="svcList" style="display:flex;flex-direction:column;gap:14px;margin-top:10px"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 11 · SERVICE DETAIL ═══ -->
+        <section class="scr push" id="scr-service">
+          <div class="pd-hero" style="height:300px">
+            <div class="ph" id="svPhoto"></div>
+            <div class="pushbar">
+              <button class="iconbtn" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+              <span></span>
+              <button class="iconbtn" aria-label="View 3D tour"><i data-lucide="rotate-3d"></i></button>
+            </div>
+          </div>
+          <div class="scroll" style="padding-top:0">
+            <div class="pd-title-row rise">
+              <div>
+                <div class="pd-brand" id="svLoc">Abu Dhabi, UAE</div>
+                <h2 id="svName">Royal Majestic Hall</h2>
+                <div class="stars" style="margin-top:7px"><i data-lucide="star"></i><span id="svRating">4.9</span><span style="color:var(--text-3);font-weight:500" id="svCap">· up to 500 guests</span></div>
+              </div>
+              <div class="pd-price" style="text-align:right"><small style="display:block;margin-bottom:2px">from</small><span id="svPrice">7,500</span> <small>AED</small></div>
+            </div>
+            <p class="pd-desc rise" id="svDesc"></p>
+
+            <div class="opt-label rise">Amenities</div>
+            <div class="amenities rise">
+              <div class="amenity"><i data-lucide="car-front"></i><span>Valet</span></div>
+              <div class="amenity"><i data-lucide="utensils"></i><span>Catering</span></div>
+              <div class="amenity"><i data-lucide="crown"></i><span>Bridal suite</span></div>
+              <div class="amenity"><i data-lucide="lamp-ceiling"></i><span>Lighting</span></div>
+            </div>
+
+            <div class="sechead rise"><div class="eyebrow">Reserve</div><h2 style="font-size:1.3rem">Your evening, your way</h2></div>
+            <div class="card rise" style="padding:16px; display:flex; flex-direction:column; gap:13px">
+              <div class="field">
+                <select id="svDate" required>
+                  <option value="" disabled selected hidden></option>
+                  <option>Saturday, 12 October 2026</option>
+                  <option>Sunday, 18 October 2026</option>
+                  <option>Friday, 24 October 2026</option>
+                </select>
+                <label>Preferred date</label>
+                <i data-lucide="chevron-down" class="chev"></i>
+              </div>
+              <div class="guest-slider" style="padding:4px 2px 0">
+                <div class="gs-head">
+                  <div class="opt-label">Guests</div>
+                  <div class="gs-val"><span id="svGuestVal">250</span> <small>GUESTS</small></div>
+                </div>
+                <input type="range" id="svGuests" min="50" max="800" step="10" value="250" aria-label="Guest count">
+              </div>
+              <div class="field">
+                <textarea id="svNotes" placeholder=" "></textarea>
+                <label>Notes for the venue (theme, styling…)</label>
+              </div>
+            </div>
+            <div style="height:90px"></div>
+          </div>
+          <div class="actionbar">
+            <button class="btn" id="svBook">
+              <span class="btn-label"><i data-lucide="calendar-check"></i>&nbsp;Request Booking</span>
+              <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ═══ 12 · TAWJEEH ═══ -->
+        <section class="scr" id="scr-tawjeeh">
+          <div class="appbar">
+            <button class="iconbtn" data-goto="profile" aria-label="Profile"><i data-lucide="user"></i></button>
+            <div class="wordmark" lang="ar">توجيه</div>
+            <button class="iconbtn" data-goto="inbox" aria-label="Messages"><i data-lucide="message-circle"></i></button>
+          </div>
+          <div class="scroll">
+            <div class="sechead rise" style="margin-top:6px">
+              <div class="eyebrow">Tawjeeh · The Sanctuary</div>
+              <h2>Wise counsel</h2>
+              <svg class="flourish" aria-hidden="true"><use href="#k-flourish"/></svg>
+            </div>
+
+            <!-- featured live webinar -->
+            <div class="webinar-card rise">
+              <div class="wb-eyebrow"><span class="rec-dot"></span>Live Majlis · Webinar</div>
+              <h3>Harmonising family traditions in modern marriage</h3>
+              <div class="wb-speaker">
+                <span class="avatar" style="width:34px;height:34px;background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop')"></span>
+                <span>Dr. Mariam Al-Mansoori · Marital Expert</span>
+              </div>
+              <div class="wb-foot">
+                <div class="wb-count" id="webinarCount" aria-label="Time until webinar">02<small>d</small> : 14<small>h</small> : 35<small>m</small></div>
+                <button class="btn slim" id="webinarReg" style="width:auto;padding:0 20px"><span class="btn-label">Reserve a seat</span></button>
+              </div>
+            </div>
+
+            <!-- knowledge capsules -->
+            <div class="sechead rise">
+              <div class="row">
+                <div><div class="eyebrow">The Library</div><h2 style="font-size:1.3rem">Knowledge capsules</h2></div>
+              </div>
+            </div>
+            <div class="hscroll rise" id="articleRow"></div>
+
+            <div class="sechead rise"><div class="eyebrow">Private Counsel</div><h2 style="font-size:1.3rem">Book a specialist</h2></div>
+            <div class="seg rise" id="specSeg">
+              <div class="seg-glider"></div>
+              <button class="seg-btn on" data-spec="all">All</button>
+              <button class="seg-btn" data-spec="marital">Marital</button>
+              <button class="seg-btn" data-spec="psych">Psychological</button>
+              <button class="seg-btn" data-spec="legal">Legal</button>
+            </div>
+            <div class="rise" id="specList" style="display:flex;flex-direction:column;gap:11px;margin-top:16px"></div>
+          </div>
+        </section>
+
+        <!-- ═══ 13 · SPECIALIST DETAIL ═══ -->
+        <section class="scr push" id="scr-specialist">
+          <div class="pushbar">
+            <button class="iconbtn" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div><div class="ptitle">Specialist</div><div class="psub">Tawjeeh</div></div>
+            <span></span>
+          </div>
+          <div class="scroll">
+            <div class="sd-head rise">
+              <div class="avatar" id="sdAvatar"><span class="live-dot"></span></div>
+              <h2 id="sdName">Dr. Amina Al-Ketbi</h2>
+              <div class="sd-sub" id="sdSub">Marital &amp; Pre-marital Counseling</div>
+              <div class="sd-stats">
+                <div class="sd-stat"><b id="sdRating">5.0</b><span>Rating</span></div>
+                <div class="sd-stat"><b id="sdYears">12y</b><span>Practice</span></div>
+                <div class="sd-stat"><b id="sdSessions">340+</b><span>Sessions</span></div>
+              </div>
+            </div>
+            <p class="pd-desc rise" id="sdBio"></p>
+            <div class="sechead rise"><div class="eyebrow">Availability</div><h2 style="font-size:1.3rem">Choose a day</h2></div>
+            <div class="calstrip rise" id="sdCal"></div>
+            <div class="opt-label rise" style="margin-top:14px">Available hours</div>
+            <div class="slot-grid rise" id="sdSlots"></div>
+            <div style="height:90px"></div>
+          </div>
+          <div class="actionbar">
+            <button class="btn" id="sdBook">
+              <span class="btn-label"><i data-lucide="calendar-check"></i>&nbsp;Book Session · <span id="sdPrice">500</span> AED</span>
+              <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ═══ 14 · CART / CHECKOUT ═══ -->
+        <section class="scr push" id="scr-cart">
+          <div class="pushbar">
+            <button class="iconbtn" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div><div class="ptitle">Your Selection</div><div class="psub">Cart &amp; Checkout</div></div>
+            <span></span>
+          </div>
+          <div class="scroll" id="cartBody">
+            <div id="cartList" style="display:flex;flex-direction:column;gap:12px"></div>
+
+            <div id="cartFilled">
+              <div class="sechead"><div class="eyebrow">Delivery Address</div></div>
+              <button class="card addr-row pressable">
+                <span class="ic"><i data-lucide="map-pin"></i></span>
+                <span class="tx"><b>Villa 12, Al Wasl Road</b><span>Jumeirah 1 · Dubai · Change</span></span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+
+              <div class="sechead"><div class="eyebrow">Payment Schedule</div></div>
+              <div class="card installment-card">
+                <div class="inst-header">
+                  <div class="ih-title">Milestone Installment Arc (13_Payments.md)</div>
+                  <div class="ih-sub">Spread payments across key wedding stages</div>
+                </div>
+                <div class="inst-grid">
+                  <div class="inst-step on">
+                    <span class="is-pct">50%</span>
+                    <span class="is-lbl">Booking Deposit</span>
+                    <span class="is-val" id="instDep">0 AED</span>
+                  </div>
+                  <div class="inst-step">
+                    <span class="is-pct">25%</span>
+                    <span class="is-lbl">Final Fitting</span>
+                    <span class="is-val" id="instFit">0 AED</span>
+                  </div>
+                  <div class="inst-step">
+                    <span class="is-pct">25%</span>
+                    <span class="is-lbl">Delivery</span>
+                    <span class="is-val" id="instDel">0 AED</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sechead"><div class="eyebrow">Summary</div></div>
+              <div class="card sum-card">
+                <div class="sum-line"><span>Subtotal</span><span id="sumSub">0 AED</span></div>
+                <div class="sum-line"><span>VAT (5%)</span><span id="sumVat">0 AED</span></div>
+                <div class="sum-line total"><span>Total</span><span class="amount" id="sumTotal">0 AED</span></div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:11px;margin-top:20px">
+                <button class="btn dark-pay" id="payApple"><i data-lucide="apple"></i><span class="btn-label" style="margin-left:-2px">Pay with Apple Pay</span></button>
+                <button class="btn ghost" id="payCard">Pay with Card · Stripe</button>
+              </div>
+              <p class="auth-legal" style="margin-top:18px"><i data-lucide="lock" style="width:10px;height:10px"></i> Bookings are charged only after vendor approval.</p>
+            </div>
+
+            <div class="empty" id="cartEmpty" style="display:none">
+              <svg class="e-logo" aria-hidden="true"><use href="#k-logo" fill="url(#logoRibbon)"/></svg>
+              <h3>Nothing here yet</h3>
+              <p>Your selections — gowns, venues, sessions — will gather here.</p>
+              <button class="btn slim" data-goto="home" style="max-width:220px">Start planning</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ 14B · CONVERSATIONS HUB ═══ -->
+        <section class="scr push" id="scr-inbox">
+          <div class="pushbar">
+            <button class="iconbtn ghost" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div><div class="ptitle">Conversations</div><div class="psub">Every thread, in its place</div></div>
+            <span></span>
+          </div>
+          <div class="scroll">
+            <div class="chiprow rise" id="inboxChips" style="margin-top:4px">
+              <button class="chip on" data-cat="all">All threads</button>
+              <button class="chip" data-cat="khitbah">Khitbah</button>
+              <button class="chip" data-cat="vendor">Vendors</button>
+              <button class="chip" data-cat="counsel">Counsel</button>
+              <button class="chip" data-cat="support">Concierge</button>
+            </div>
+            <div class="rise" id="threadList" style="display:flex;flex-direction:column;gap:11px;margin-top:14px"></div>
+          </div>
+        </section>
+
+        <!-- ═══ 15 · CHAT ═══ -->
+        <section class="scr push" id="scr-chat">
+          <div class="chatbar">
+            <button class="iconbtn ghost" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div class="avatar" id="chatAvatar" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop')"><span class="live-dot"></span></div>
+            <div class="cb-info">
+              <h4 id="chatTitle">Candidate 92A</h4>
+              <div class="cb-status" id="chatStatus"><span class="live-dot-s"></span>Online now</div>
+            </div>
+            <button class="iconbtn ghost" style="color:var(--danger)" id="chatReport" aria-label="Report"><i data-lucide="flag"></i></button>
+          </div>
+          <div class="chat-guard"><i data-lucide="shield-check"></i>Guarded introduction — contact details stay private</div>
+          <div class="chat-log" id="chatLog">
+            <div class="msg recv">Hello, it's lovely to connect with you. I hope your day has been kind. <span class="m-time">20:41</span></div>
+            <div class="msg sent">Hello! It's a pleasure to meet you too. <span class="m-time">20:43</span></div>
+          </div>
+          <div class="chat-input">
+            <input type="text" id="chatText" placeholder="Write a message…" aria-label="Message">
+            <button class="send-btn" id="chatSend" aria-label="Send"><i data-lucide="arrow-up"></i></button>
+          </div>
+        </section>
+
+        <!-- ═══ 16 · LIVE SESSION ═══ -->
+        <section class="scr scr-live" id="scr-live" data-statusbar="dark">
+          <div class="live-feed" style="background-image:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop')"></div>
+          <div class="live-top">
+            <div class="live-id">
+              <h4>Dr. Amina Al-Ketbi</h4>
+              <span><span class="rec-dot"></span>Private consultation</span>
+            </div>
+            <div class="live-timer" id="liveTimer">00:00</div>
+          </div>
+          <div class="pip"><i data-lucide="user"></i></div>
+          <div class="live-controls">
+            <button class="live-btn" id="liveMic" aria-label="Mute microphone"><i data-lucide="mic"></i></button>
+            <button class="live-btn" id="liveCam" aria-label="Toggle camera"><i data-lucide="video"></i></button>
+            <button class="live-btn" aria-label="Share notes"><i data-lucide="notebook-pen"></i></button>
+            <button class="live-btn end" id="liveEnd" aria-label="End call"><i data-lucide="phone-off"></i></button>
+          </div>
+        </section>
+
+        <!-- ═══ 17 · PROFILE ═══ -->
+        <section class="scr push" id="scr-profile">
+          <div class="pushbar">
+            <button class="iconbtn ghost" data-back aria-label="Back"><i data-lucide="arrow-left"></i></button>
+            <div><div class="ptitle">My Kosha</div></div>
+            <span></span>
+          </div>
+          <div class="scroll">
+            <div class="prof-head rise">
+              <div class="prof-avatar">
+                <div class="inner" id="profInitials">G</div>
+                <span class="verify"><i data-lucide="check"></i></span>
+              </div>
+              <h2 id="profName">Guest</h2>
+              <!-- UAE Pass Gold Crest Badge -->
+              <div class="uae-gold-crest">
+                <i data-lucide="shield-check" class="gc-icon"></i>
+                <span class="gc-text">UAE Pass · Gold Crest Verified</span>
+              </div>
+            </div>
+
+            <!-- Role Mode Switcher (12_Profile.md) -->
+            <div class="seg rise" id="profileRoleSeg" style="margin-top:14px;margin-bottom:14px">
+              <div class="seg-glider"></div>
+              <button class="seg-btn on" data-role="couple">Couple / Member</button>
+              <button class="seg-btn" data-role="supplier">Specialist / Atelier Mode</button>
+            </div>
+
+            <div class="sechead rise"><div class="eyebrow">Membership &amp; Privée</div></div>
+            <div class="card set-group rise">
+              <div class="set-row">
+                <span class="ic"><i data-lucide="gem"></i></span>
+                <span class="tx">Khotbah Privée</span>
+                <span class="val" id="profSub">Inactive</span>
+              </div>
+              <div class="set-row">
+                <span class="ic"><i data-lucide="coins"></i></span>
+                <span class="tx">Currency</span>
+                <span class="val">AED · Dirham</span>
+              </div>
+            </div>
+
+            <div class="sechead rise"><div class="eyebrow">Account</div></div>
+            <div class="card set-group rise">
+              <button class="set-row"><span class="ic"><i data-lucide="user-pen"></i></span><span class="tx">Personal details</span><i data-lucide="chevron-right" class="chev"></i></button>
+              <button class="set-row"><span class="ic"><i data-lucide="map-pin"></i></span><span class="tx">Addresses</span><i data-lucide="chevron-right" class="chev"></i></button>
+              <button class="set-row"><span class="ic"><i data-lucide="credit-card"></i></span><span class="tx">Payment methods</span><i data-lucide="chevron-right" class="chev"></i></button>
+              <button class="set-row" data-goto="cart"><span class="ic"><i data-lucide="package"></i></span><span class="tx">Orders &amp; bookings</span><i data-lucide="chevron-right" class="chev"></i></button>
+            </div>
+
+            <div class="sechead rise"><div class="eyebrow">Preferences</div></div>
+            <div class="card set-group rise">
+              <div class="set-row">
+                <span class="ic"><i data-lucide="moon"></i></span>
+                <span class="tx">Dark mode</span>
+                <button class="switch" id="profThemeSwitch" role="switch" aria-checked="false" aria-label="Toggle dark mode"></button>
+              </div>
+              <button class="set-row"><span class="ic"><i data-lucide="bell"></i></span><span class="tx">Notifications</span><i data-lucide="chevron-right" class="chev"></i></button>
+              <button class="set-row"><span class="ic"><i data-lucide="headset"></i></span><span class="tx">Concierge support</span><i data-lucide="chevron-right" class="chev"></i></button>
+            </div>
+
+            <button class="btn ghost rise" id="signOutBtn" style="margin-top:24px;border-color:var(--danger);color:var(--danger)">Sign out</button>
+
+            <div class="brand-foot rise">
+              <svg aria-hidden="true"><use href="#k-logo" fill="url(#logoRibbon)"/></svg>
+              <span>Kosha · Crafted for forever</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ NAV DOCK — raised-hump ribbon dock ═══ -->
+        <nav class="dock" id="dock" aria-label="Main navigation">
+          <svg class="dock-canvas" id="dockCanvas" aria-hidden="true" preserveAspectRatio="none"><path id="dockPath"/></svg>
+          <button class="dock-item on" data-tab="home"><span class="di-ic"><i data-lucide="home"></i></span><span class="di-lbl">Home</span></button>
+          <button class="dock-item" data-tab="khotbah"><span class="di-ic"><i data-lucide="gem"></i></span><span class="di-lbl">Khotbah</span></button>
+          <button class="dock-item" data-tab="zahbah"><span class="di-ic"><i data-lucide="shopping-bag"></i></span><span class="di-lbl">Zahbah</span></button>
+          <button class="dock-item" data-tab="zaffah"><span class="di-ic"><i data-lucide="landmark"></i></span><span class="di-lbl">Zaffah</span></button>
+          <button class="dock-item" data-tab="tawjeeh"><span class="di-ic"><i data-lucide="heart-handshake"></i></span><span class="di-lbl">Tawjeeh</span></button>
+        </nav>
+
+        <!-- ═══ OVERLAYS ═══ -->
+        <div class="toast" id="toast" data-kind="success" role="status">
+          <span class="t-ic"><i data-lucide="check" id="toastIcon"></i></span>
+          <span id="toastMsg">Done.</span>
+        </div>
+
+        <div class="sheet-scrim" id="sheetScrim"></div>
+
+        <!-- connect request sheet -->
+        <div class="sheet" id="sheetConnect">
+          <div class="grab"></div>
+          <h3>A first hello</h3>
+          <p class="sh-sub">Send a short, sincere introduction. They'll see it with your compatibility — never your contact details.</p>
+          <div class="field">
+            <textarea id="connectMsg" placeholder=" "></textarea>
+            <label>Your introduction…</label>
+          </div>
+          <button class="btn" id="connectSend" style="margin-top:16px">
+            <span class="btn-label"><i data-lucide="send"></i>&nbsp;Send Request</span>
+            <svg class="btn-loop" viewBox="0 0 26 26"><circle cx="13" cy="13" r="10.5"/></svg>
+          </button>
+        </div>
+
+        <!-- rating sheet -->
+        <div class="sheet" id="sheetRate">
+          <div class="grab"></div>
+          <h3>How was your session?</h3>
+          <p class="sh-sub">Your rating helps us keep only the finest counsel in the circle.</p>
+          <div class="rate-row" id="rateRow">
+            <button class="rate-star" data-v="1" aria-label="1 star"><i data-lucide="star"></i></button>
+            <button class="rate-star" data-v="2" aria-label="2 stars"><i data-lucide="star"></i></button>
+            <button class="rate-star" data-v="3" aria-label="3 stars"><i data-lucide="star"></i></button>
+            <button class="rate-star" data-v="4" aria-label="4 stars"><i data-lucide="star"></i></button>
+            <button class="rate-star" data-v="5" aria-label="5 stars"><i data-lucide="star"></i></button>
+          </div>
+          <button class="btn" id="rateSubmit">Share Rating</button>
+        </div>
+
+        <!-- article reading sheet -->
+        <div class="sheet" id="sheetArticle">
+          <div class="grab"></div>
+          <div class="rn-badge" id="artBadge">Pre-Marriage Harmony</div>
+          <h3 id="artTitle" style="text-align:left">The quiet art of the first year</h3>
+          <p class="sh-sub" id="artMeta" style="text-align:left;margin:6px 0 14px">5 min read · Dr. Amina Al-Ketbi</p>
+          <div id="artBody" style="font-size:0.86rem;line-height:1.75;color:var(--text-2)"></div>
+          <div style="display:flex;gap:10px;margin-top:20px">
+            <button class="btn quiet slim" id="artSave" style="flex:1"><i data-lucide="bookmark"></i><span class="btn-label">Save</span></button>
+            <button class="btn slim" id="artDone" style="flex:1.6">Continue reading later</button>
+          </div>
+        </div>
+
+        <!-- sign out sheet -->
+        <div class="sheet" id="sheetSignout">
+          <div class="grab"></div>
+          <h3>Leaving so soon?</h3>
+          <p class="sh-sub">Your plans, cart and matches will be waiting for your return.</p>
+          <button class="btn" id="signoutConfirm" style="background:var(--danger);box-shadow:0 10px 26px color-mix(in srgb, var(--danger) 35%, transparent)">Sign Out</button>
+          <button class="btn quiet" id="signoutCancel" style="margin-top:10px">Stay</button>
+        </div>
+
+        <!-- Roadmap Node Detail Sheet (09_زفة.md) -->
+        <div class="sheet" id="sheetRoadmapNode">
+          <div class="grab"></div>
+          <div class="rn-badge" id="rnBadge">Node #4 · Milestone</div>
+          <h3 id="rnTitle">Venue Locking</h3>
+          <p class="sh-sub" id="rnDesc">Secure hall reservation deposit &amp; confirm acoustic acoustics.</p>
+          <div class="rn-meta-box">
+            <div class="rn-stat"><b>Status</b><span id="rnStatus">Active</span></div>
+            <div class="rn-stat"><b>Prerequisite</b><span id="rnPrereq">Budget Allocation</span></div>
+            <div class="rn-stat"><b>Target Window</b><span id="rnTarget">8 Months Before</span></div>
+          </div>
+          <button class="btn champagne" id="rnActionBtn" style="margin-top:16px">Mark Milestone Complete ✦</button>
+        </div>
+
+        <!-- Digital Gold Receipt Sheet (13_Payments.md) -->
+        <div class="sheet" id="sheetGoldReceipt">
+          <div class="grab"></div>
+          <div class="gold-receipt-card">
+            <div class="gr-stamp">OFFICIAL KOSHA STAMP ✦</div>
+            <h3 class="gr-title">Certified Digital Receipt</h3>
+            <p class="gr-sub">Issued under UAE Commercial Code · Encrypted Ledger</p>
+            <div class="gr-body">
+              <div class="gr-line"><span>Transaction Hash</span><code id="grHash">0x9F82...A41B</code></div>
+              <div class="gr-line"><span>Vendor</span><b id="grVendor">Atelier Noor &amp; Royal Hall</b></div>
+              <div class="gr-line"><span>Timestamp</span><span id="grTime">24 July 2026, 14:30 GST</span></div>
+              <div class="gr-line gr-total"><span>Total Settled</span><b id="grAmount">24,500 AED</b></div>
+            </div>
+            <div class="gr-qr">
+              <svg viewBox="0 0 100 100" width="64" height="64"><path d="M0,0h40v40h-40zM50,0h40v40h-40zM0,50h40v40h-40zM60,60h10v10h-10zM80,60h20v20h-20zM60,80h30v20h-30z" fill="#C9AD7C"/></svg>
+            </div>
+          </div>
+          <button class="btn quiet" id="grCloseBtn" style="margin-top:14px">Close Receipt</button>
+        </div>
+
+        <!-- processing veil -->
+        <div class="wait-veil" id="waitVeil">
+          <svg class="loop-mark" viewBox="0 0 1024 1024"><path d="M 276 250 C 320 224 360 212 420 212 L 660 212 C 730 212 776 250 776 322 L 776 600 C 776 650 762 678 726 692 C 690 680 560 560 512 514 C 502 504 498 492 498 478 C 520 478 570 462 594 434 C 618 406 622 360 610 330 C 596 300 560 282 528 292 C 500 302 492 330 492 366 L 492 470 C 492 502 476 520 450 536 C 414 558 388 592 384 634 C 380 674 398 706 434 716 C 470 726 500 704 504 664 C 508 620 506 560 500 514 C 494 480 470 452 440 424 L 330 320 C 300 292 260 300 240 330 C 228 350 224 368 224 400 L 224 660 C 224 730 260 788 340 788 L 660 788 C 700 788 726 780 742 764"/></svg>
+          <span id="waitLabel">Securing payment</span>
+        </div>
+
+        <!-- success veil -->
+        <div class="success-veil" id="successVeil">
+          <svg class="sv-mark" viewBox="0 0 108 108">
+            <circle class="ring" cx="54" cy="54" r="50"/>
+            <path class="tick" d="M 32 56 L 48 71 L 78 39"/>
+          </svg>
+          <h2 id="successTitle">It's done.</h2>
+          <p id="successCopy">Payment confirmed. Your order is now with the vendor.</p>
+          <button class="btn champagne" id="successDone">Continue</button>
+          <button class="btn quiet" id="openGoldReceiptBtn" style="max-width:250px;margin-top:11px;background:transparent;color:#E9D5AF;border:1px solid rgba(201,173,124,0.4)"><i data-lucide="file-check"></i><span class="btn-label">View Gold-Stamped Receipt</span></button>
+        </div>
+
+      </div><!-- /app -->
+    </div>
+  </div>
+
+  <script src="logo3d.js?v=4"></script>
+  <script src="kosha.js?v=6"></script>
+</body>
+</html>
